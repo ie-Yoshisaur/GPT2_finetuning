@@ -1,0 +1,7 @@
+datasets
+git+https://github.com/huggingface/transformers
+pandas
+protobuf
+sentencepiece
+torch
+tqdm
