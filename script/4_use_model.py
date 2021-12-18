@@ -3,10 +3,10 @@ from pathlib import Path
 output = Path("output/")
 
 import torch
-from  transformers import AutoModelForCausalLM, AutoTokenizer
+from  transformers import AutoModelForCausalLM, T5Tokenizer
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-tokenizer = AutoTokenizer.from_pretrained('rinna/japanese-gpt2-small')
+tokenizer = T5Tokenizer.from_pretrained('rinna/japanese-gpt2-medium')
 tokenizer.do_lower_case = True
 model = AutoModelForCausalLM.from_pretrained(output)
 model.to(device)

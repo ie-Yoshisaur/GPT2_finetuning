@@ -15,4 +15,4 @@ for csv_file in csv_files:
 merged_df = merged_df.rename(columns={'artificial_line': 'input', 'reply': 'output'})
 
 print(merged_df)
-merged_df.to_csv('./csv/processed/input_output.csv')
+merged_df.to_csv('./csv/processed_csv/input_output.csv')

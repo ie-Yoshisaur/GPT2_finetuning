@@ -5,7 +5,7 @@ tokenizer = AutoTokenizer.from_pretrained("rinna/japanese-gpt2-small")
 csv_path = "./csv/processed_csv/input_output.csv"
 train_df = pd.read_csv(csv_path)
 
-with open("gpt2_train_data.txt", 'w') as output_file:
+with open("./txt/gpt2_train_data.txt", 'w') as output_file:
     tmp = []
     for x, y in zip(train_df["input"], train_df["output"]):
         inp_tokens = tokenizer.tokenize(x)[:256]
