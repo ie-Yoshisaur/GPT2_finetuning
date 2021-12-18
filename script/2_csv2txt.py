@@ -2,7 +2,7 @@ import pandas as pd
 from transformers import AutoModelForCausalLM, AutoTokenizer
 tokenizer = AutoTokenizer.from_pretrained("rinna/japanese-gpt2-small")
 
-csv_path = "input_output.csv"
+csv_path = "./csv/processed_csv/input_output.csv"
 train_df = pd.read_csv(csv_path)
 
 with open("gpt2_train_data.txt", 'w') as output_file:

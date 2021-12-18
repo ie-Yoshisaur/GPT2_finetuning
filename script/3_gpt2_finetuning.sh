@@ -1,7 +1,7 @@
 python3 ./transformers/examples/pytorch/language-modeling/run_clm.py \
     --model_name_or_path=rinna/japanese-gpt2-small \
-    --train_file=gpt2_train_data.txt \
-    --validation_file=gpt2_train_data.txt \
+    --train_file=./txt/gpt2_train_data.txt \
+    --validation_file=./txt/gpt2_train_data.txt \
     --do_train \
     --do_eval \
     --num_train_epochs=10 \
