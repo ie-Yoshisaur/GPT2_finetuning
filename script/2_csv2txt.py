@@ -1,6 +1,6 @@
 import pandas as pd
-from transformers import AutoModelForCausalLM, AutoTokenizer
-tokenizer = AutoTokenizer.from_pretrained("rinna/japanese-gpt2-small")
+from transformers import AutoModelForCausalLM, T5Tokenizer
+tokenizer = T5Tokenizer.from_pretrained("rinna/japanese-gpt2-medium")
 
 csv_path = "./csv/processed_csv/input_output.csv"
 train_df = pd.read_csv(csv_path)
