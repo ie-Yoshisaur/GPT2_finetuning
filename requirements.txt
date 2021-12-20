@@ -1,7 +1,6 @@
-datasets
-git+https://github.com/huggingface/transformers
-pandas
+datasets==1.2.1
 protobuf
-sentencepiece
+transformers==4.4.2
+sentencepiece==0.1.91
 torch
 tqdm

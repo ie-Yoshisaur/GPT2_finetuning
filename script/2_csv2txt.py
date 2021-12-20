@@ -1,6 +1,6 @@
 import pandas as pd
-from transformers import AutoModelForCausalLM, AutoTokenizer
-tokenizer = AutoTokenizer.from_pretrained("rinna/japanese-gpt2-small")
+from transformers import AutoModelForCausalLM, T5Tokenizer
+tokenizer = T5Tokenizer.from_pretrained("rinna/japanese-gpt2-small")
 
 csv_path = "./csv/processed_csv/input_output.csv"
 train_df = pd.read_csv(csv_path)
@@ -15,7 +15,7 @@ with open("./txt/gpt2_train_data.txt", 'w') as output_file:
         out_tokens = tokenizer.tokenize(y)[:256]
         out = "".join(out_tokens).replace('▁', '')
 
-        data = "<s>" + inp + "[SEP]" + out + "</s>"
+        data = "<s>" + inp + "[SEP]" + out + "</s>\n"
         tmp.append(data)
-    txt = "".join(tmp)*10
+    txt = "".join(tmp)*1
     output_file.write(txt + '\n')

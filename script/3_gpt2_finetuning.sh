@@ -1,14 +1,15 @@
-python3 ./transformers/examples/pytorch/language-modeling/run_clm.py \
+python3 ./transformers/examples/language-modeling/run_clm.py \
     --model_name_or_path=rinna/japanese-gpt2-small \
     --train_file=./txt/gpt2_train_data.txt \
     --validation_file=./txt/gpt2_train_data.txt \
     --do_train \
     --do_eval \
-    --num_train_epochs=3 \
-    --save_steps=1000 \
+    --num_train_epochs=10 \
+    --save_steps=10000 \
     --save_total_limit=3 \
     --per_device_train_batch_size=1 \
     --per_device_eval_batch_size=1 \
-    --output_dir=trained_model/ \
+    --output_dir=output/ \
     --use_fast_tokenizer=False \
+    --learning_rate=1e-03 \
     --overwrite_output_dir
