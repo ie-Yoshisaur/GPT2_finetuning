@@ -1,6 +1,6 @@
 datasets==1.2.1
 protobuf
 transformers==4.4.2
-sentencepiece==0.1.91
+sentencepiece==0.1.96
 torch
 tqdm
