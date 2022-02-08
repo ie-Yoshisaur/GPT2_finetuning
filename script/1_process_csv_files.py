@@ -14,5 +14,17 @@ for csv_file in csv_files:
 
 merged_df = merged_df.rename(columns={'artificial_line': 'input', 'reply': 'output'})
 
-print(merged_df)
-merged_df.to_csv('./csv/processed_csv/input_output.csv')
+proccessed_csv_path = './csv/processed_csv/input_output.csv'
+
+merged_df.to_csv(proccessed_csv_path)
+
+with open(proccessed_csv_path) as f:
+    content = f.read()
+
+while ',,' in content:
+    content = content.replace(',,', ',')
+
+content = content.replace(",\n", "\n")
+
+with open(proccessed_csv_path, mode='w') as f:
+    f.write(content)
